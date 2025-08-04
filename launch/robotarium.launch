@@ -1,0 +1,33 @@
+<launch>
+    <!-- ros2 bag play _2022-04-07-14-14-35_robotarium/_2022-04-07-14-14-35_robotarium.db3 
+    -\-rate 1.0 
+    -\-clock 
+    -\-start-paused 
+    -\-remap /stereo_camera/left/image_raw:=/image_raw /odometry/filtered:=/odom 
+    -\-topics /stereo_camera/left/image_raw /odometry/filtered -->
+
+    <node
+        pkg="ratslam"
+        exec="ratslam_pc"
+        name="RatSLAMPoseCells"
+        output="screen"
+        args="--ros-args --remap _image_transport:=compressed">
+        <param name="config_file" value="$(find-pkg-share ratslam)/config/config_neoslam_robotarium.txt.in" />
+        <param name="use_sim_time" value="true" />
+        <param name="media_path" value="$(find-pkg-share ratslam)/media" />
+        <param name="image_file" value="irat_sm.tga" />
+    </node>
+
+    <node
+        pkg="ratslam"
+        exec="ratslam_em"
+        name="RatSLAMExperienceMap"
+        output="screen"
+        args="--ros-args --remap _image_transport:=compressed">
+        <param name="config_file" value="$(find-pkg-share ratslam)/config/config_neoslam_robotarium.txt.in" />
+        <param name="use_sim_time" value="true" />
+        <param name="media_path" value="$(find-pkg-share ratslam)/media" />
+        <param name="image_file" value="irat_sm.tga" />
+    </node>      
+</launch>
+

@@ -1,0 +1,21 @@
+[ratslam]
+pc_dim_xy = 30
+pc_dim_th = 36
+pc_w_e_dim = 7
+pc_w_i_dim = 5
+pc_w_e_var = 1
+pc_w_i_var = 2
+vt_active_decay = 1.0
+pc_global_inhib = 0.00002
+pc_vt_inject_energy = 0.15
+pc_cell_x_size = 1.0
+exp_delta_pc_threshold = 2
+exp_loops=1
+exp_initial_em_deg=90.0
+
+[draw]
+enable=1
+vt_window_width=416
+vt_window_height=480
+exp_map_size=500
+posecells_size=250
