@@ -28,8 +28,8 @@ Main dependencies:
 
    ```bash
    cd ~/rolling_ws/src
-   git clone https://github.com/OpenRatSLAM2/ratslam.git
-   git clone https://github.com/OpenRatSLAM2/topological_msgs.git
+   git clone https://github.com/BorgesJVT/ratslam.git
+   git clone https://github.com/BorgesJVT/topological_msgs.git
    ```
 
 2. **Install system dependencies:**
